@@ -1,0 +1,33 @@
+{
+  "name": "mon-app-electron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dist": "electron-builder --windows portable",
+    "package": "electron-packager . TestApp --platform=win32 --arch=x64 --out=build --overwrite"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "electron": "^36.2.1",
+    "electron-builder": "^26.0.12",
+    "electron-packager": "^17.1.2"
+  },
+  "build": {
+    "appId": "com.antoine.jojo",
+    "productName": "MonAppElectron",
+    "files": [
+      "src/**/*"
+    ],
+    "win": {
+      "forceCodeSigning": false,
+      "target": "portable",
+      "icon": "src/icon.png"
+    }
+  }
+}
